@@ -5,7 +5,7 @@ print(tools[0])
 removed = tools[1:3]
 print('removed list: ',removed)
 
-tools[1] = 'Webcam'
+tools[1] = 'Webcam' # change the value at index 1 to 'Webcam'
 print(tools)
 
 tools.append('Desk')
@@ -30,13 +30,14 @@ print('og list: ', og_list)
 print('new reference: ', new_reference)
 
 # def appNewThing(list, newitem): #list is a parameter, newitem is a parameter
+def appNewThing(list, newitem): #list is a parameter, newitem is a parameter
     list.append(newitem)        
 
 appNewThing(og_list, 7) #og_list is an argument, 7 is an argument
 print('og list after function call: ', og_list) #og_list is changed because it is passed by reference, meaning the function modifies the original list.
 
 def add3(num): # define a function that takes a number as an argument and adds 3 to it
-    num += 3   # num is a local variable that is created inside the function, it is not the same as the original variable outside the function
+    num += 3   
     print('num inside function: ', num) #num is a local variable, it is not the same as the original variable outside the function
 
 print(og_list == new_reference) #True, because they reference the same list in memory
@@ -46,7 +47,8 @@ print(ref2 == new_reference) #False, because they are different lists in memory,
 print(ref2 == og_list) #False, because they are different lists in memory, even though they have the same values    
 
 # Deep copy - for when you want to create a new list that is a copy of the original list, but is not the same list in memory
-new_deep_copy = og_list.copy() # creates a new list that is a copy of the original list, but is not the same list in memory
+# creates a new list that is a copy of the original list, but is not the same list in memory
+new_deep_copy = og_list.copy()
 
 new_deep_copy.append(10) # adds 10 to the new deep copy list
 print('new deep copy: ', new_deep_copy) # new deep copy list is [1, 2, 3, 7, 10]
@@ -54,8 +56,8 @@ print('og list: ', og_list) # og list is [1, 2, 3, 7] because it is not changed 
 
 
 
-Part 3
-List and Functions
+#Part 3
+#List and Functions
 recent_first = [1989, 1991, 1997, 2000]
 recent_last = [2022,2018,2016,2011]
 
